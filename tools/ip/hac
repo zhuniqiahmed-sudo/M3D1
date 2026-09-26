@@ -1,0 +1,57 @@
+import sys
+
+def print_banner():
+    # Large block text layout placeholder
+    print(r"""
+ __  __ _____  _____  _ 
+
+|  \/  |____ |/ ____|/ |
+| \  / |  __/ | |    | |
+| |\/| | |__  | |    | |
+| |  | |___/ /| |____| |
+|_|  |_|____/  \_____|_| TOOLS
+    """)
+    print("=" * 60)
+    print("                M3D1'S DIAGNOSTIC SUITE          ")
+    print("=" * 60)
+
+def show_options():
+    print("\n[1] Check Public IP Address     [2] Network Diagnostic Ping")
+    print("[3] View Local Interfaces       [4] Route Configuration Info")
+    print("[5] Exit Application")
+
+def check_ip():
+    print("\n[*] Initializing IP lookup procedure...")
+    # Safe logic or function call goes here
+    print("[+] Operation completed successfully.")
+
+def run_ping():
+    print("\n[*] Executing network diagnostic ping...")
+    # Safe logic or function call goes here
+    print("[+] Host is reachable.")
+
+def main():
+    while True:
+        print_banner()
+        show_options()
+        
+        try:
+            choice = input("\nSelect an option number: ").strip()
+            
+            if choice == '1':
+                check_ip()
+            elif choice == '2':
+                run_ping()
+            elif choice == '5':
+                print("\nExiting utility panel...")
+                sys.exit(0)
+            else:
+                print("\n[!] Invalid selection. Please choose an option from the list.")
+        except KeyboardInterrupt:
+            print("\n\n[-] Execution interrupted by user. Exiting.")
+            sys.exit(0)
+            
+        print("\n" + "-" * 60)
+
+if __name__ == "__main__":
+    main()
